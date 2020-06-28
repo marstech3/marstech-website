@@ -2449,7 +2449,7 @@ h5,
   border-radius: 4px;
   padding: 20px;
   border: 1px solid #eee;
-  border-left: 10px solid #e94238;
+  border-left: 2px solid #e94238;
 }
 .author-box *:last-child {
   margin-bottom: 0;
