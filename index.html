@@ -682,7 +682,7 @@
                     <img
                       src="images/sustainidalogo.png"
                       alt="Image"
-                      class="zoom w-50 img-fluid mb-3 shadow"
+                      class="w-50 img-fluid mb-3 shadow"
                     />
                   </div>
                 </figure>
@@ -706,7 +706,7 @@
                     <img
                       src="images/anylaptopfixlogo.png"
                       alt="Image"
-                      class="zoom w-50 img-fluid mb-3 shadow"
+                      class="w-50 img-fluid mb-3 shadow"
                     />
                   </div>
                 </figure>
@@ -733,7 +733,7 @@
                     <img
                       src="images/vvbsportslogo.png"
                       alt="Image"
-                      class="zoom w-50 img-fluid mb-3 shadow"
+                      class="w-50 img-fluid mb-3 shadow"
                     />
                   </div>
                 </figure>
@@ -758,7 +758,7 @@
                     <img
                       src="images/nprlogo.png"
                       alt="Image"
-                      class="zoom w-50 img-fluid mb-3 shadow"
+                      class="w-50 img-fluid mb-3 shadow"
                     />
                   </div>
                 </figure>
@@ -888,7 +888,6 @@
           </div>
           <div class="row justify-content-center">
             <div class="col-lg-7 mb-5">
-              <form action="#" class="p-5 bg-white">
                 <h2 class="h4 text-black mb-5">Contact Form</h2>
 
                 <div class="row form-group">
@@ -948,14 +947,13 @@
 
                 <div class="row form-group">
                   <div class="col-md-12">
-                    <input
-                      type="submit"
-                      value="Send Message"
+                    <button
                       class="btn btn-primary mr-2 mb-2"
-                    />
+                      onclick="sendSms()"
+                    >Send Message</button>
                   </div>
                 </div>
-              </form>
+                <div id="alert_placeholder"></div>
             </div>
           </div>
         </div>
@@ -990,8 +988,9 @@
     <script src="js/aos.js"></script>
     <script src="js/jquery.fancybox.min.js"></script>
     <script src="js/jquery.sticky.js"></script>
-
     <script src="js/main.js"></script>
+    <script src="js/sendSms.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
     <!--Start of Tawk.to Script-->
     <script type="text/javascript">
       var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
