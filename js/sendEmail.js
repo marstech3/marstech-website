@@ -1,25 +1,29 @@
-function sendSms() {
+function sendEmail() {
   console.log("Send Sms hit");
 
   bootstrap_alert = function () {}; //Alert Messages
   bootstrap_alert.warning = function (message) {
     $("#alert_placeholder").html(
-      '<div class="alert alert-success role="alert""><a class="close" data-dismiss="alert">×</a><span>' +
+      '<div class="alert alert-success alert-dismissible">' +
+        '<button type="button" class="close" data-dismiss="alert">&times;</button>' +
+        "<strong>Success! </strong>" +
         message +
-        "</span></div>"
+        "</div>"
     );
   };
 
   function displaySuccessMessage() {
-    bootstrap_alert.warning("Email Sent successfully");
+    bootstrap_alert.warning("Message Sent");
   }
 
   bootstrap_error = function () {}; //Error Messages
   bootstrap_error.error = function (message) {
     $("#alert_placeholder").html(
-      '<div class="alert alert-error role="alert""><a class="close" data-dismiss="alert">×</a><span>' +
+      '<div class="alert alert-danger alert-dismissible">' +
+        '<button type="button" class="close" data-dismiss="alert">&times;</button>' +
+        "<strong>Error! </strong>" +
         message +
-        "</span></div>"
+        "</div>"
     );
   };
 
@@ -51,7 +55,7 @@ function sendSms() {
       Subject: subject,
       Body: finalEmail,
     }).then((message) => {
-      if (message == "ok") {
+      if (message == "OK") {
         displaySuccessMessage();
       }
     });
