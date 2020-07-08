@@ -31,7 +31,8 @@ function sendEmail() {
   var lname = document.getElementById("lname").value;
   var email = document.getElementById("email").value;
   var message = document.getElementById("message").value;
-  var subject = document.getElementById("subject").value;
+  var subject =
+    "Marstech Website Enquiry: " + document.getElementById("subject").value;
 
   if (fname == "" || email == "" || message == "") {
     bootstrap_error.error("Please Enter Mandatory Fields");
