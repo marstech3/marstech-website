@@ -121,7 +121,7 @@ h5,
   border-width: 2px;
   background: #ff4f5b;
   border-color: #ff4f5b;
-  color: #fff;
+  color: rgb(0 0 0 / 82%);
   position: relative;
   top: 0;
   -webkit-transition: 0.3s all ease;
@@ -135,8 +135,8 @@ h5,
   background: #ff4f5b;
   border-color: #ff4f5b;
   color: #fff;
-  -webkit-box-shadow: 0 5px 30px -5px rgba(66, 133, 244, 0.7) !important;
-  box-shadow: 0 5px 30px -5px rgba(66, 133, 244, 0.7) !important;
+  -webkit-box-shadow: 0 5px 30px -5px #ff4f5b !important;
+  box-shadow: 0 5px 30px -5px #ff4f5b !important;
 }
 
 .line-height-1 {
@@ -2405,7 +2405,7 @@ h5,
   position: absolute;
   bottom: -10px;
   right: -10px;
-  background: #007bff;
+  background: #ff4f5b;
   padding: 20px;
 }
 @media (max-width: 991.98px) {
