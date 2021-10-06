@@ -31,34 +31,48 @@ function sendEmail() {
   var lname = document.getElementById("lname").value;
   var email = document.getElementById("email").value;
   var message = document.getElementById("message").value;
-  var subject =
-    "Marstech Website Enquiry: " + document.getElementById("subject").value;
+  var subject = "Enquiry: " + document.getElementById("subject").value;
 
   if (fname == "" || email == "" || message == "") {
     bootstrap_error.error("Please Enter Mandatory Fields");
   } else {
-    var finalEmail =
-      "Hi this is " +
-      fname +
-      " " +
-      lname +
-      ", Query: " +
-      message +
-      ", My email id is: " +
-      email;
+    emailjs.init("user_XqqloAFzHLQ0XbKV9skSE");
 
-    Email.send({
-      Host: "smtp.gmail.com",
-      Username: "marstechweb@gmail.com",
-      Password: "Marstech@123",
-      To: "marstechweb@gmail.com",
-      From: "marstechweb@gmail.com",
-      Subject: subject,
-      Body: finalEmail,
-    }).then((message) => {
-      if (message == "OK") {
+    var templateParams = {
+      firstName: fname,
+      lastName: lname,
+      subject: subject,
+      email: email,
+      message: message,
+    };
+
+    emailjs.send("service_2a7y4cu", "template_doxzpdp", templateParams).then(
+      function (response) {
+        console.log("SUCCESS!", response.status, response.text);
         displaySuccessMessage();
+        fname = "";
+        lname = "";
+        subject = "";
+        email = "";
+        message = "";
+      },
+      function (error) {
+        console.log("FAILED...", error);
       }
-    });
+    );
+
+    // Email.send({
+    //   Host: "smtp.gmail.com",
+    //   Username: "marstechweb@gmail.com",
+    //   Password: "Marstech@123",
+    //   To: "marstechweb@gmail.com",
+    //   From: "marstechweb@gmail.com",
+    //   Subject: subject,
+    //   Body: finalEmail,
+    // }).then((message) => {
+    //   if (message == "OK") {
+    //     displaySuccessMessage();
+    //   }
+    // });
   }
 }
